@@ -105,12 +105,11 @@ function svSched(hoursString, value) {
         initializeLocalStorage();
     };
 
-// Need to refresh data...IDK Get Help. //
 // Result method reference links: https://doc.rust-lang.org/std/result/; https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni03/node8.html //
 function refresh(){
     dataResults = localStorage.getItem('t4hours');
 
-    return
+    return (result ? result : t4Hours);
 }
 
 // Event Listener. //
