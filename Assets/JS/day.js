@@ -1,5 +1,6 @@
 'use strict';
 
+// Global variables, etc., declared. //
 const t4Hours = {
     "0000": "",
     "0100": "",
@@ -27,6 +28,7 @@ const t4Hours = {
     "2300": "",
 };
 
+// Functions declared. //
 function clockString(hoursString){
     switch (hoursString){ // Switch statement https://www.w3schools.com/js/js_switch.asp //
         case "0000": return 00;
@@ -92,3 +94,15 @@ for(const property in t4Hours){
       counter++;  
 };
 
+function svSched(hoursString, value) {
+    if(!localStorage.getItem('t4hours')) {
+      initializeLocalStorage();
+    };
+
+// Event Listener. //
+$("button").click(function() {
+    value = $(this).siblings("taskRow").val();
+    hoursString = $(this).siblings("div").text();
+    
+    svSched(hoursString, value);
+  });
