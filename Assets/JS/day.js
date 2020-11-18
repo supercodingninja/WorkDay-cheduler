@@ -60,11 +60,13 @@ function clockString(hoursString){
 
 $(document).ready(function(){
     if(localStorage.getItem('t4hours')){
+       
         tasks(t4Hours);
     }
     
     else {
-        tasks(JSON.parse(localStorage.getItem('t4Hours')))
+        t
+        asks(JSON.parse(localStorage.getItem('t4Hours')))
     };
 });
 
@@ -77,18 +79,21 @@ for(const property in t4Hours){
     $(taskEntered).text(t4Hours[property]);
     let clockTime = "#clock" + counter;
     let clockHour = moment().hour();
-    let stringTime = $(clockTime).text();
+    let hoursString = $(clockTime).text();
     let schedTask = clockString(hoursString);
 
         if (schedTask < clockHour){
+           
             $(taskEntered).addClass("past"); 
         };
         
         else if (schedTask > clockHour){
+            
             $(taskEntered).addClass("future"); 
         };
         
         else {
+            
             $(taskEntered).addClass("current"); 
         };
       counter++;  
@@ -96,8 +101,17 @@ for(const property in t4Hours){
 
 function svSched(hoursString, value) {
     if(!localStorage.getItem('t4hours')) {
-      initializeLocalStorage();
+      
+        initializeLocalStorage();
     };
+
+// Need to refresh data...IDK Get Help. //
+// Result method reference links: https://doc.rust-lang.org/std/result/; https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni03/node8.html //
+function refresh(){
+    dataResults = localStorage.getItem('t4hours');
+
+    return
+}
 
 // Event Listener. //
 $("button").click(function() {
