@@ -99,10 +99,34 @@ for(const property in t4Hours){
       counter++;  
 };
 
+// Using Local Storage.  Ref. link: https://www.taniarascia.com/how-to-use-local-storage-with-javascript/ //
+function useLocalStorage() {
+    
+    localStorage.setItem('t4hours', JSON.stringify(t4hours));
+  };
+  
+  function saveLocalStorage(schedBody) {
+    
+    localStorage.setItem('t4hours', JSON.stringify(schedBody));
+  }
+  
+  function saveSchedule(hourString, value) {
+    if(!localStorage.getItem('t4hours')) {
+      
+        useLocalStorage();
+    }
+  
+    let schedule = JSON.parse(localStorage.getItem('t4hours'));
+    
+        schedule[hourString] = value;
+  
+        saveLocalStorage(schedule);
+  }
+
 function svSched(hoursString, value) {
     if(!localStorage.getItem('t4hours')) {
       
-        initializeLocalStorage();
+        useLocalStorage();
     };
 
 // Result method reference links: https://doc.rust-lang.org/std/result/; https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni03/node8.html //
@@ -114,7 +138,7 @@ function refresh(){
 
 // Event Listener. //
 $("button").click(function() {
-    value = $(this).siblings("taskRow").val();
+    value = $(this).siblings("taskRow").value();
     hoursString = $(this).siblings("div").text();
     
     svSched(hoursString, value);
