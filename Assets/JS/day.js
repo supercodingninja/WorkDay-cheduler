@@ -100,6 +100,13 @@ for(const property in t4Hours){
 };
 
 // Using Local Storage.  Ref. link: https://www.taniarascia.com/how-to-use-local-storage-with-javascript/ //
+// Result method reference links: https://doc.rust-lang.org/std/result/; https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni03/node8.html //
+function refresh(){
+    dataResults = localStorage.getItem('t4hours');
+
+    return (result ? result : t4Hours);
+};
+
 function useLocalStorage() {
     
     localStorage.setItem('t4hours', JSON.stringify(t4hours));
@@ -110,7 +117,7 @@ function useLocalStorage() {
     localStorage.setItem('t4hours', JSON.stringify(schedBody));
   }
   
-  function saveSchedule(hourString, value) {
+  function saveSchedule(hoursString, value) {
     if(!localStorage.getItem('t4hours')) {
       
         useLocalStorage();
@@ -118,7 +125,7 @@ function useLocalStorage() {
   
     let schedule = JSON.parse(localStorage.getItem('t4hours'));
     
-        schedule[hourString] = value;
+        schedule[hoursString] = value;
   
         saveLocalStorage(schedule);
   }
@@ -128,17 +135,21 @@ function svSched(hoursString, value) {
       
         useLocalStorage();
     };
+};
 
-// Result method reference links: https://doc.rust-lang.org/std/result/; https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni03/node8.html //
-function refresh(){
-    dataResults = localStorage.getItem('t4hours');
-
-    return (result ? result : t4Hours);
-}
+function updateCalendarTasks(schedBody) {
+    
+    $(".taskRow").each(function(index) {
+      
+        let refresh = $(this).children("div");
+      
+      $(this).children("textarea").text(schedBody[refresh.text()]);
+    });
+  };
 
 // Event Listener. //
 $("button").click(function() {
-    value = $(this).siblings("taskRow").value();
+    value = $(this).siblings("textarea").value();
     hoursString = $(this).siblings("div").text();
     
     svSched(hoursString, value);
