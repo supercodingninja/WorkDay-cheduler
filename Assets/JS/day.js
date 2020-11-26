@@ -62,11 +62,10 @@ $(document).ready(function(){
     if(localStorage.getItem('t4hours')){
        
         tasks(t4Hours);
-    }
-    
+    };
+
     else {
-        t
-        asks(JSON.parse(localStorage.getItem('t4Hours')))
+        tasks(JSON.parse(localStorage.getItem('t4Hours')));
     };
 });
 
