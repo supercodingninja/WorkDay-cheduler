@@ -31,7 +31,7 @@ const t4Hours = {
 // Functions declared. //
 function clockString(hoursString){
     switch (hoursString){ // Switch statement https://www.w3schools.com/js/js_switch.asp //
-        case "0000": return 00;
+        case "0000": return 24;
         case "0100": return 1;
         case "0200": return 2;
         case "0300": return 3;
