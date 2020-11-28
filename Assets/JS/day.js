@@ -1,6 +1,6 @@
 'use strict';
 
-// Global variables, etc., declared. //
+// Global variable for my hours to plan my work, declared. //
 const t4Hours = {
     
     "0100": "",
@@ -27,14 +27,17 @@ const t4Hours = {
     "2200": "",
     "2300": "",
     "0000": "",
+
 };
 
-// Local Storage //
+
+// Local Storage for my hours available to plan in my work day. //
 $(document).ready(function() {
+    
     if(!localStorage.getItem('t4Hours')) {
        
         tasksUpdated(t4Hours);
-        
+
     }
     
     else {
@@ -44,9 +47,54 @@ $(document).ready(function() {
     };
 });
 
-// Functions declared. //
-function clockString(hoursString){
-    switch (hoursString){ // Switch statement https://www.w3schools.com/js/js_switch.asp //
+
+// Using https://momentjs.com/ I am having trouble with this section. //
+$('#currDate h4').text(moment().format();
+
+let counter = 1;
+
+for(const property in t4Hours){
+    
+    let taskEntered = "#anyTask" + counter;
+    
+    $(taskEntered).text(t4Hours[property]);
+    
+    let clockTime = "#clock" + counter;
+    
+    let theMoment = moment().hour();
+    
+    let myHours = $(clockTime).text();
+    
+    let schedTask = strungHours(myHours);
+
+        // Keep it simple! //
+        if (schedTask < theMoment) {
+           
+            $(taskEntered).addClass("past");
+
+        }
+        
+        else if (schedTask > theMoment) {
+            
+            $(taskEntered).addClass("future");
+
+        }
+        
+        else {
+            
+            $(taskEntered).addClass("current");
+
+        };
+
+        counter++; // Increments needed for arguments: past, present, future.  //
+
+};
+
+
+// "Stringing the hours," LOL! //
+function strungHours(myHours) {
+    
+    switch(myHours) { // Switch statement https://www.w3schools.com/js/js_switch.asp //
     
         case "0100": return 1;
         case "0200": return 2;
@@ -72,69 +120,52 @@ function clockString(hoursString){
         case "2200": return 22;
         case "2300": return 23;
         case "0000": return 24;
+
     }; 
 };
 
-$('#currDate h4').text(moment().format('DDDD') + "," + moment().format('MMMM do YYYY, hh:mm'));
 
-let counter = 1;
-
-for(const property in t4Hours){
-    let taskEntered = "#anyTask" + counter;
-    $(taskEntered).text(t4Hours[property]);
-    let clockTime = "#clock" + counter;
-    let clockHour = moment().hour();
-    let hoursString = $(clockTime).text();
-    let schedTask = clockString(hoursString);
-
-        if (schedTask < clockHour){
-           
-            $(taskEntered).addClass("past"); 
-        };
-        
-        else if (schedTask > clockHour){
-            
-            $(taskEntered).addClass("future"); 
-        };
-        
-        else {
-            
-            $(taskEntered).addClass("current"); 
-        };
-      counter++;  
-};
-
-// Using Local Storage.  Ref. link: https://www.taniarascia.com/how-to-use-local-storage-with-javascript/ //
-// Result method reference links: https://doc.rust-lang.org/std/result/; https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni03/node8.html //
-function refresh(){
+// I need to refresh/update my data. //
+function refresh() {
+    
     dataResults = localStorage.getItem('t4Hours');
 
-    return (result ? result : t4Hours);
+        return (dataResults ? dataResults : t4Hours);
+
 };
 
-function useLocalStorage() {
+
+function setLS() {
     
     localStorage.setItem('t4Hours', JSON.stringify(t4Hours));
-  };
+
+};
   
-  function saveLocalStorage(schedBody) {
+
+function saveLS(schedBody) {
     
     localStorage.setItem('t4Hours', JSON.stringify(schedBody));
-  }
-  
-  function saveSchedule(hoursString, value) {
+
+};
+
+ 
+function saveSched(myHours, value) {
+    
     if(!localStorage.getItem('t4Hours')) {
       
-        useLocalStorage();
+        setLS();
+
     }
   
-    let schedule = JSON.parse(localStorage.getItem('t4Hours'));
+    var schedule = JSON.parse(localStorage.getItem('t4Hours'));
     
-        schedule[hoursString] = value;
+        schedule[myHours] = value;
   
-        saveLocalStorage(schedule);
-  };
+        saveLS(schedule);
+        
+};
 
+  
 function tasksUpdated(schedBody) {
     
     $(".taskRow").each(function(index) {
@@ -142,13 +173,17 @@ function tasksUpdated(schedBody) {
         let refresh = $(this).children("div");
       
       $(this).children("textarea").text(schedBody[refresh.text()]);
+      
     });
-  };
+};
 
 // Event Listener. //
 $("button").click(function() {
-    value = $(this).siblings("textarea").value();
-    hoursString = $(this).siblings("div").text();
     
-    svSched(hoursString, value);
-  });
+    thisData = $(this).siblings("textarea").val();
+    
+    myHours = $(this).siblings("div").text();
+    
+    svSched(myHours, thisData);
+
+});
