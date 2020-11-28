@@ -74,7 +74,7 @@ $('#currDate h4').text(moment().format('DDDD') + "," + moment().format('MMMM do 
 let counter = 1;
 
 for(const property in t4Hours){
-    let taskEntered = "#taskEntered" + counter;
+    let taskEntered = "#anyTask" + counter;
     $(taskEntered).text(t4Hours[property]);
     let clockTime = "#clock" + counter;
     let clockHour = moment().hour();
