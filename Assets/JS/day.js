@@ -30,7 +30,7 @@ const t4Hours = {
 };
 
 $(document).ready(function(){
-    if(localStorage.getItem('t4hours')){
+    if(!localStorage.getItem('t4hours')){
        
         tasks(t4Hours);
     };
