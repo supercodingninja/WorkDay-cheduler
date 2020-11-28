@@ -2,7 +2,7 @@
 
 // Global variables, etc., declared. //
 const t4Hours = {
-    "0000": "",
+    
     "0100": "",
     "0200": "",
     "0300": "",
@@ -26,12 +26,24 @@ const t4Hours = {
     "2100": "",
     "2200": "",
     "2300": "",
+    "0000": "",
 };
+
+$(document).ready(function(){
+    if(localStorage.getItem('t4hours')){
+       
+        tasks(t4Hours);
+    };
+
+    else {
+        tasks(JSON.parse(localStorage.getItem('t4Hours')));
+    };
+});
 
 // Functions declared. //
 function clockString(hoursString){
     switch (hoursString){ // Switch statement https://www.w3schools.com/js/js_switch.asp //
-        case "0000": return 24;
+    
         case "0100": return 1;
         case "0200": return 2;
         case "0300": return 3;
@@ -55,19 +67,9 @@ function clockString(hoursString){
         case "2100": return 21;
         case "2200": return 22;
         case "2300": return 23;
+        case "0000": return 24;
     }; 
 };
-
-$(document).ready(function(){
-    if(localStorage.getItem('t4hours')){
-       
-        tasks(t4Hours);
-    };
-
-    else {
-        tasks(JSON.parse(localStorage.getItem('t4Hours')));
-    };
-});
 
 $('#currDate h4').text(moment().format('DDDD') + "," + moment().format('MMMM do YYYY, hh:mm'));
 
