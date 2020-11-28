@@ -1,0 +1,26 @@
+header {
+    text-align: center;
+}
+
+button .saveTask {
+    background-color: blue;
+}
+
+/* Color code for distinguishing whether the task/event has passed or not. */
+/* day.js Ln 73 */
+.past {
+    border-color: rgb(15, 1, 4);
+    background-color: rgb(43, 7, 7);
+}
+
+/* day.js Ln 85 */
+.current {
+    border-color: rgb(15, 1, 4);
+    background-color: rgb(253, 255, 117);
+}
+
+/* day.js Ln 79 */
+.future {
+    border-color: rgb(15, 1, 4);
+    background-color: rgb(45, 110, 60);
+}

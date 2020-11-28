@@ -67,7 +67,7 @@ for(const property in t4Hours){
     
     let schedTask = strungHours(myHours);
 
-        // Keep it simple! //
+        // Distinguishing whether the task/event has passed or not.  Keep it simple! //
         if (schedTask < theMoment) {
            
             $(taskEntered).addClass("past");
