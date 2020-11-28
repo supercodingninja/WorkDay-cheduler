@@ -3,7 +3,12 @@ header {
     text-align: center;
 }
 
-button .saveTask {
+.col-lg-1 {
+    text-align: center;
+    background-color: darkgoldenrod;
+}
+
+#saveTask {
     background-color: blue;
 }
 
