@@ -38,7 +38,7 @@ $(document).ready(function() {
        
         tasksUpdated(t4Hours);
 
-    }
+    } 
     
     else {
         
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 
 // Using https://momentjs.com/ I am having trouble with this section. //
-$('#currDate h4').text(moment().format();
+$('#currDate').text(moment().format();
 
 let counter = 1;
 
@@ -125,8 +125,8 @@ function strungHours(myHours) {
 };
 
 
-// I need to refresh/update my data. //
-function refresh() {
+// I need to update my data. //
+function updateThis() {
     
     dataResults = localStorage.getItem('t4Hours');
 
@@ -149,17 +149,17 @@ function saveLS(schedBody) {
 };
 
  
-function saveSched(myHours, value) {
+function saveSched(myHours, myData) {
     
     if(!localStorage.getItem('t4Hours')) {
       
         setLS();
 
-    }
+    };
   
     var schedule = JSON.parse(localStorage.getItem('t4Hours'));
     
-        schedule[myHours] = value;
+        schedule[myHours] = myData;
   
         saveLS(schedule);
         
@@ -168,11 +168,13 @@ function saveSched(myHours, value) {
   
 function tasksUpdated(schedBody) {
     
-    $(".taskRow").each(function(index) {
+    $(".taskRow").each(function(getData) {
       
-        let refresh = $(this).children("div");
+        let myPlanner = $(this).children("div");
       
-      $(this).children("textarea").text(schedBody[refresh.text()]);
+        $(this).children("textarea").text(schedBody[myPlanner.text()]);
+
+        return getData;
       
     });
 };
