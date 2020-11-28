@@ -29,6 +29,7 @@ const t4Hours = {
     "0000": "",
 };
 
+// Local Storage //
 $(document).ready(function(){
     if(!localStorage.getItem('t4hours')){
        
@@ -138,7 +139,7 @@ function svSched(hoursString, value) {
     };
 };
 
-function updateCalendarTasks(schedBody) {
+function tasks(schedBody) {
     
     $(".taskRow").each(function(index) {
       
