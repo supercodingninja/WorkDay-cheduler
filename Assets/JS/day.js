@@ -31,7 +31,7 @@ const t4Hours = {
 
 // Local Storage //
 $(document).ready(function(){
-    if(!localStorage.getItem('t4hours')){
+    if(!localStorage.getItem('t4Hours')){
        
         tasksUpdated(t4Hours);
     };
@@ -103,40 +103,33 @@ for(const property in t4Hours){
 // Using Local Storage.  Ref. link: https://www.taniarascia.com/how-to-use-local-storage-with-javascript/ //
 // Result method reference links: https://doc.rust-lang.org/std/result/; https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/lecture-notes/uni03/node8.html //
 function refresh(){
-    dataResults = localStorage.getItem('t4hours');
+    dataResults = localStorage.getItem('t4Hours');
 
     return (result ? result : t4Hours);
 };
 
 function useLocalStorage() {
     
-    localStorage.setItem('t4hours', JSON.stringify(t4hours));
+    localStorage.setItem('t4Hours', JSON.stringify(t4Hours));
   };
   
   function saveLocalStorage(schedBody) {
     
-    localStorage.setItem('t4hours', JSON.stringify(schedBody));
+    localStorage.setItem('t4Hours', JSON.stringify(schedBody));
   }
   
   function saveSchedule(hoursString, value) {
-    if(!localStorage.getItem('t4hours')) {
+    if(!localStorage.getItem('t4Hours')) {
       
         useLocalStorage();
     }
   
-    let schedule = JSON.parse(localStorage.getItem('t4hours'));
+    let schedule = JSON.parse(localStorage.getItem('t4Hours'));
     
         schedule[hoursString] = value;
   
         saveLocalStorage(schedule);
-  }
-
-function svSched(hoursString, value) {
-    if(!localStorage.getItem('t4hours')) {
-      
-        useLocalStorage();
-    };
-};
+  };
 
 function tasksUpdated(schedBody) {
     
