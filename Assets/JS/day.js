@@ -30,13 +30,17 @@ const t4Hours = {
 };
 
 // Local Storage //
-$(document).ready(function(){
-    if(!localStorage.getItem('t4Hours')){
+$(document).ready(function() {
+    if(!localStorage.getItem('t4Hours')) {
        
         tasksUpdated(t4Hours);
-    };
-
-    else tasksUpdated(JSON.parse(localStorage.getItem('t4Hours')));
+        
+    }
+    
+    else {
+        
+        tasksUpdated(JSON.parse(localStorage.getItem('t4Hours')));
+    
     };
 });
 
