@@ -171,6 +171,7 @@ function tasksUpdated(schedBody) {
     
     $(".taskRow").each(function(getData) {
       
+        // Using the "this" selector, to get the children. //
         let myPlanner = $(this).children("div");
       
         $(this).children("textarea").text(schedBody[myPlanner.text()]);
