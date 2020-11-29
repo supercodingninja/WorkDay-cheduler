@@ -7,7 +7,8 @@ header {
     font-weight: bold;
 }
 
-.refresh {
+/* Refresh Button Style */
+#refresh {
 	box-shadow: 3px 4px 0px 0px #8a37b3;
 	background:linear-gradient(to bottom, #10a67c 5%, #852965 100%);
 	background-color:#10a67c;
@@ -23,13 +24,12 @@ header {
 	text-shadow:0px 1px 0px #530580;
 }
 
-/* Refresh Button Style */
-.refresh:hover {
+#refresh:hover {
 	background:linear-gradient(to bottom, #852965 5%, #10a67c 100%);
 	background-color:#852965;
 }
 
-.refresh:active {
+#refresh:active {
 	position:relative;
 	top:1px;
 }
