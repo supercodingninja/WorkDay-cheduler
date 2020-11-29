@@ -3,6 +3,10 @@ header {
     text-align: center;
 }
 
+.capMoment {
+    font-weight: bold;
+}
+
 #tod {
     text-align: center;
     background-color: darkgoldenrod;

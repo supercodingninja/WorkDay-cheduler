@@ -49,7 +49,8 @@ $(document).ready(function() {
 
 
 // Using https://momentjs.com/ I am having trouble with this section. I have to refresh the page to get the accurate time.//
-$('#currDate').text(moment().format('YYYY-' + 'MM-' + 'DD') + moment().format(' dddd  ') + moment().format('LTS'));
+// $('#currDate').text(moment().format('YYYY-' + 'MM-' + 'DD') + moment().format(' dddd  ') + moment().format('LTS'));
+$('#currDate').text(moment().format());
 
 let counter = 1;
 
