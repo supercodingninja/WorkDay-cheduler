@@ -10,7 +10,7 @@
     <!-- My Favicon -->
     <link rel="shortcut icon" type="image/png" href="Assets/Media/apple-touch-icon.png">
     <!-- Bootstrap Used -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Remember that your save icons are from here: https://use.fontawesome.com/releases/v5.8.1/css/all.css -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
@@ -26,7 +26,12 @@
       <h1 class="bigTitle">Work Day Scheduler</h1>
 
       <p class="brief"><i>A simple calendar app for scheduling your work day</i></p>
-      <div class="capMoment" id="currDate"><h4></h4></div>
+
+      <div class="capMoment" id="currDate"></div>
+
+      <button id="refresh">
+        Refresh
+      </button>
     </header>
 
     <br>
@@ -41,7 +46,7 @@
         </div>
         
         <!-- Format center row (data/task input area), here -->
-        <textarea rows="3" id="taskEntered1" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered1" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -52,7 +57,7 @@
           0100
         </div>
         
-        <textarea rows="3" id="taskEntered2" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered2" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -63,7 +68,7 @@
           0200
         </div>
         
-        <textarea rows="3" id="taskEntered3" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered3" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -74,7 +79,7 @@
           0300
         </div>
         
-        <textarea rows="3" id="taskEntered4" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered4" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -85,7 +90,7 @@
           0400
         </div>
         
-        <textarea rows="3" id="taskEntered5" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered5" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -96,7 +101,7 @@
           0500
         </div>
         
-        <textarea rows="3" id="taskEntered6" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered6" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -107,7 +112,7 @@
           0600
         </div>
         
-        <textarea rows="3" id="taskEntered7" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered7" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -118,7 +123,7 @@
           0700
         </div>
         
-        <textarea rows="3" id="taskEntered8" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered8" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -129,7 +134,7 @@
           0800
         </div>
         
-        <textarea rows="3" id="taskEntered9" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered9" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -140,7 +145,7 @@
           0900
         </div>
         
-        <textarea rows="3" id="taskEntered10" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered10" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -151,7 +156,7 @@
           1000
         </div>
         
-        <textarea rows="3" id="taskEntered11" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered11" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -162,7 +167,7 @@
           1100
         </div>
         
-        <textarea rows="3" id="taskEntered12" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered12" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -173,7 +178,7 @@
           1200
         </div>
         
-        <textarea rows="3" id="taskEntered13" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered13" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -184,7 +189,7 @@
           1300
         </div>
         
-        <textarea rows="3" id="taskEntered14" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered14" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -195,7 +200,7 @@
           1400
         </div>
         
-        <textarea rows="3" id="taskEntered15" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered15" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -206,7 +211,7 @@
           1500
         </div>
         
-        <textarea rows="3" id="taskEntered16" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered16" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -217,7 +222,7 @@
           1600
         </div>
         
-        <textarea rows="3" id="taskEntered17" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered17" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -228,7 +233,7 @@
           1700
         </div>
         
-        <textarea rows="3" id="taskEntered18" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered18" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -239,7 +244,7 @@
           1800
         </div>
         
-        <textarea rows="3" id="taskEntered19" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered19" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -250,7 +255,7 @@
           1900
         </div>
         
-        <textarea rows="3" id="taskEntered20" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered20" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -261,7 +266,7 @@
           2000
         </div>
         
-        <textarea rows="3" id="taskEntered21" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered21" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -272,7 +277,7 @@
           2100
         </div>
         
-        <textarea rows="3" id="taskEntered22" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered22" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -283,7 +288,7 @@
           2200
         </div>
         
-        <textarea rows="3" id="taskEntered23" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered23" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
@@ -294,13 +299,13 @@
           2300
         </div>
         
-        <textarea rows="3" id="taskEntered24" class="col-lg-8.2"></textarea>
+        <textarea rows="2" id="taskEntered24" class="col-lg-9"></textarea>
         
         <button id="saveTask" class="col-lg-1"><i class="far fa-save"></i></button>
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
    <!-- My Script to My Daily Planner -->

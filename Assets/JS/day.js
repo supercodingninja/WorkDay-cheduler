@@ -181,8 +181,13 @@ function tasksUpdated(schedBody) {
     });
 };
 
-// Event Listener. //
-$("button").click(function() {
+// Event Listeners. //
+$("#refresh").click(function() {
+    // GET HELP!  You may need to use "thisData, and "myHours"; but you need to clear "saveSched"!
+});
+
+
+$("#saveTask").click(function() {
     
     thisData = $(this).siblings("textarea").val();
     
