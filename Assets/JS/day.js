@@ -75,15 +75,17 @@ for(const property in t4Hours){
 
         }
         
-        else if (schedTask > theMoment) {
+        else if (schedTask === theMoment) {
             
-            $(taskEntered).addClass("future");
+            $(taskEntered).addClass("current");
+            $(taskEntered).removeClass("past");
 
         }
         
         else {
-            
-            $(taskEntered).addClass("current");
+            $(taskEntered).removeClass("past");
+            $(taskEntered).removeClass("current");
+            $(taskEntered).addClass("future");
 
         };
 
@@ -97,30 +99,53 @@ function strungHours(myHours) {
     
     switch(myHours) { // Switch statement https://www.w3schools.com/js/js_switch.asp //
     
+        case "0000": return 0;
+            break;
         case "0100": return 1;
+            break;
         case "0200": return 2;
+        break;
         case "0300": return 3;
+        break;
         case "0400": return 4;
+        break;
         case "0500": return 5;
+        break;
         case "0600": return 6;
+        break;
         case "0700": return 7;
+        break;
         case "0800": return 8;
+        break;
         case "0900": return 9;
+        break;
         case "1000": return 10;
+        break;
         case "1100": return 11;
+        break;
         case "1200": return 12;
+        break;
         case "1300": return 13;
+        break;
         case "1400": return 14;
+        break;
         case "1500": return 15;
+        break;
         case "1600": return 16;
+        break;
         case "1700": return 17;
+        break;
         case "1800": return 18;
+        break;
         case "1900": return 19;
+        break;
         case "2000": return 20;
+        break;
         case "2100": return 21;
+        break;
         case "2200": return 22;
+        break;
         case "2300": return 23;
-        case "0000": return 24;
 
     }; 
 };
@@ -193,7 +218,7 @@ $("#saveTask").click(function() {
     
     myHours = $(this).siblings("div").text();
     
-    svSched(myHours, thisData);
+    saveSched(myHours, thisData);
 
 });
 
