@@ -82,7 +82,8 @@ for(const property in t4Hours){
 
         }
         
-        else {
+        else if (schedTask > theMoment) {
+
             $(taskEntered).removeClass("past");
             $(taskEntered).removeClass("current");
             $(taskEntered).addClass("future");
