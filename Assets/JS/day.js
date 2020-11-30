@@ -148,6 +148,7 @@ function strungHours(myHours) {
             break;
         case "2300": return 23;
         default: "Plan your day!"
+        
     }; 
 };
 
