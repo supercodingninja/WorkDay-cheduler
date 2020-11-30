@@ -1,7 +1,7 @@
 'use strict';
 
 // Global variable for my hours to plan my work, declared. //
-const t4Hours = {
+let t4Hours = {
     
     "0100": "",
     "0200": "",
@@ -105,49 +105,49 @@ function strungHours(myHours) {
         case "0100": return 1;
             break;
         case "0200": return 2;
-        break;
+            break;
         case "0300": return 3;
-        break;
+            break;
         case "0400": return 4;
-        break;
+            break;
         case "0500": return 5;
-        break;
+            break;
         case "0600": return 6;
-        break;
+            break;
         case "0700": return 7;
-        break;
+            break;
         case "0800": return 8;
-        break;
+            break;
         case "0900": return 9;
-        break;
+            break;
         case "1000": return 10;
-        break;
+            break;
         case "1100": return 11;
-        break;
+            break;
         case "1200": return 12;
-        break;
+            break;
         case "1300": return 13;
-        break;
+            break;
         case "1400": return 14;
-        break;
+            break;
         case "1500": return 15;
-        break;
+            break;
         case "1600": return 16;
-        break;
+            break;
         case "1700": return 17;
-        break;
+            break;
         case "1800": return 18;
-        break;
+            break;
         case "1900": return 19;
-        break;
+            break;
         case "2000": return 20;
-        break;
+            break;
         case "2100": return 21;
-        break;
+            break;
         case "2200": return 22;
-        break;
+            break;
         case "2300": return 23;
-
+        default: "Plan your day!"
     }; 
 };
 
