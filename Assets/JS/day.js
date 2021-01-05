@@ -67,10 +67,12 @@ for(const property in t4Hours){
     let myHours = $(clockTime).text();
     
     let schedTask = strungHours(myHours);
+        console.log(schedTask);
 
         // Distinguishing whether the task/event has passed or not.  Keep it simple! //
         if (schedTask < theMoment) {
-           
+            
+            $(taskEntered).removeClass("current");
             $(taskEntered).addClass("past");
 
         }
